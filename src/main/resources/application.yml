@@ -1,0 +1,26 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: user-microservice
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/account
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+ribbon:
+  eureka:
+    enabled: true
+
